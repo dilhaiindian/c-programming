@@ -1,4 +1,4 @@
-Grading at Thu Apr 30 16:56:21 UTC 2020
+Grading at Thu Apr 30 17:08:45 UTC 2020
 Checking code1.c for legal syntax
 temp.c: In function ‘main’:
 temp.c:22:10: error: too many arguments for format [-Werror=format-extra-args]

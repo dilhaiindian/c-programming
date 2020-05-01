@@ -23,8 +23,8 @@ int isInRange(int coord, int offset, int size) {
  * offset + size
  */
 int isAtBorder(int coord, int offset, int size) {
-  // if(coord==offset || coord==offset+size){
-  if((offset<=coord && coord<offset)||(offset +size<=coord && coord<offset + size)){
+   if(coord==offset || coord==offset+size){
+  // if(offset<=coord || coord<offset + size){
     return 1;
   }
     else{
@@ -35,7 +35,7 @@ int isAtBorder(int coord, int offset, int size) {
   return 0;
 }
 int maximum(int f1, int f2) {
-  if (f1 <f2) {
+  if (f1 > f2) {
     return f1;
   }
   else {

@@ -25,10 +25,17 @@ struct rect_tag {
   typedef struct rect_tag rectangle;
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
-  if ( r.width<0 || r.height<0){
+  if ( r.width<0){
     r.width = -1 * r.width;
-    r.height = -1 * r.height;
   }
+  else{
+    if(r.height<0){
+      r.height = -1 * r.height;
+    }
+    else{
+      return r;
+    }
+  }   
   return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {

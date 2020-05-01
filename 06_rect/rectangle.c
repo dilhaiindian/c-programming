@@ -16,14 +16,25 @@ int max (int a, int b) {
 }
 
 //Declare your rectangle structure here!
-
-
+struct rect_tag {
+  int x;
+  int y;
+  int width;
+  int height;
+};
+  typedef struct rect_tag rectangle;
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION
-  return r;
+   return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
+  rectangle ans;
+  ans.x = max(r1.x, r2.x);
+  ans.y = max(r1.y, r2.y);
+  ans.width = min(r1.width, r2.width);
+  ans.height = min(r1.height, r2.height);  
+  return ans;
   return r1;
 }
 

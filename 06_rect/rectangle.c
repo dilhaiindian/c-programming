@@ -24,8 +24,7 @@ struct rect_tag {
 };
   typedef struct rect_tag rectangle;
 rectangle canonicalize(rectangle r) {
-  //WRITE THIS FUNCTION
-   
+  //WRITE THIS FUNCTION 
     if ( r.width<0){
      r.x = r.x + r.width; 
      r.width = -1 * r.width;

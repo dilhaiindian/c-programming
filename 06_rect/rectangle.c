@@ -25,23 +25,37 @@ struct rect_tag {
   typedef struct rect_tag rectangle;
 rectangle canonicalize(rectangle r) {
   //WRITE THIS FUNCTION 
-  //    if ( r.width<0){
-  //  r.x = r.x + r.width; 
-  //   r.width = -1 * r.width;
-  //  }
-  //  if (r.height<0){
-  //    r.y = r.y + r.height;
-  //    r.height = -1 * r.height;
-  //  }   
+      if ( r.width<0){
+        r.x = r.x + r.width; 
+        r.width = -1 * r.width;
+      }
+      if (r.height<0){
+        r.y = r.y + r.height;
+        r.height = -1 * r.height;
+    }   
   return r;
 }
 rectangle intersection(rectangle r1, rectangle r2) {
   //WRITE THIS FUNCTION
   rectangle ans;
+  //Canonicalize rectangles
+  r1 = canonicalize(r1);
+  r2 = canonicalize(r2);
+
+  //To retun no rectangle intersect
+  if(((r1.x + r1.width < r2.x) || (r2.x + r2.width < r1.x)) || ((r1.y + r1.height < r2.y) || (r2.y + r2.height < r1.y))){
+    ans.x = 0;
+    ans.y = 0;
+    ans.width = 0;
+    ans.height = 0;
+    return ans;
+  }
+
+  //Coordinates of intersecting rectangle
   ans.x = max(r1.x, r2.x);
   ans.y = max(r1.y, r2.y);
-  ans.width = min(r1.width, r2.width);
-  ans.height = min(r1.height, r2.height);  
+  ans.width = min(r1.x + r1.width, r2.x + r2.width) - ans.x;
+  ans.height = min(r1.y + r1.height, r1.y + r2.height) - ans.y;  
   return ans;
   return r1;
 }

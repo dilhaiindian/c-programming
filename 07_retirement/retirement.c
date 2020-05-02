@@ -9,8 +9,8 @@ struct _retire_info{
 typedef struct _retire_info retire_info;
 
 double balance_calculator(double balance, retire_info record){
-  balance += balance * record.rate_of_return;
-  balance += balance + record.contribution;
+  balance += record.rate_of_return;
+  balance += record.contribution;
 
   return balance;
 }

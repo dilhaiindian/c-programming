@@ -33,7 +33,7 @@ rectangle canonicalize(rectangle r) {
         r.y += r.height;
         r.height *= -1;
     }   
-  return r;
+    return r;
 }
 
 rectangle intersection(rectangle r1, rectangle r2) {
@@ -49,6 +49,7 @@ rectangle intersection(rectangle r1, rectangle r2) {
     ans.y = 0;
     ans.width = 0;
     ans.height = 0;
+
     return ans;
   }
 
@@ -56,7 +57,7 @@ rectangle intersection(rectangle r1, rectangle r2) {
   ans.x = max(r1.x, r2.x);
   ans.width = min(r1.x + r1.width, r2.x + r2.width) - ans.x; 
   ans.y = max(r1.y, r2.y);
-  ans.height = min(r1.y + r1.height, r1.y + r2.height) - ans.y;  
+  ans.height = min(r1.y + r1.height, r2.y + r2.height) - ans.y;  
 
   return ans;
 }

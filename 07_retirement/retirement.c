@@ -16,7 +16,8 @@ double balance_calculator(double balance, retire_info record){
 }
 
 void print_monthly_balance(int months, double balance){
-  printf("Age %3d month %2d you have $%.21f\n", months/12,months%12, balance);
+  printf("Age %3d month %2d you have $%.21f\n", months/12, months%12, balance);
+  return;
 }
 
 void retirement (int startAge, double initial, retire_info working, retire_info retired){

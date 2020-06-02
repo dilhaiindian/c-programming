@@ -14,7 +14,7 @@ int main(){
     printf("Test Failed: No array input");
     exit(EXIT_FAILURE);
   }
-  if (maxSeq(array1, 4) != 3){
+  if (maxSeq(array1, 4) != 4){
     printf("Test Failed: 1, 2, 3, 4");
     exit(EXIT_FAILURE);
   }
